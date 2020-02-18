@@ -1,6 +1,13 @@
 import json
 import glo
+import pickle
 
+# to read dict file
+def open_dict(file_name):
+    ''' to open dict file '''
+    with open(file_name, 'br') as f:
+        dictionary = pickle.load(f)
+    return dictionary
 
 # from text to json files
 def process_text_to_json(file_name, topic_name):
