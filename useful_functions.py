@@ -2,6 +2,16 @@ import json
 import glo
 import pickle
 
+# to merge dictionaries
+def merge_dicts(*dict_args):
+    """
+    Merge dictionaries
+    """
+    result = {}
+    for dictionary in dict_args:
+        result.update(dictionary)
+    return result
+
 # to read dict file
 def open_dict(file_name):
     ''' to open dict file '''
