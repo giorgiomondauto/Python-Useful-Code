@@ -49,3 +49,7 @@ with open("merged_file.json", "wb") as outfile:
 new_dict = dict((v,k) for k,v in enumerate(set(list(\
                                  itertools.chain(*data[columns].apply(lambda x: x.split(' '))))),  max(existing_dictionary.values()) + 1)) # instead of max(  ) + 1 we can type any number
 
+
+# to remove an empty space from a list
+while("" in professioni.Subgroup.iloc[1]) : 
+    professioni.Subgroup.iloc[1].remove("")
