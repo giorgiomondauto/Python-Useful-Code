@@ -53,3 +53,6 @@ new_dict = dict((v,k) for k,v in enumerate(set(list(\
 # to remove an empty space from a list
 while("" in professioni.Subgroup.iloc[1]) : 
     professioni.Subgroup.iloc[1].remove("")
+
+# to display all the columns of dataframe
+pd.set_option('display.max_columns', None)
