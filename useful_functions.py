@@ -56,3 +56,7 @@ while("" in professioni.Subgroup.iloc[1]) :
 
 # to display all the columns of dataframe
 pd.set_option('display.max_columns', None)
+
+# convert list of string into a list for a column
+import ast
+info_data['Info'] = info_data['Info'].apply(lambda x: ast.literal_eval(x))
