@@ -71,3 +71,17 @@ def check_url(url):
     else:
         raise Exception('Web site does not exist')
     return url
+
+# to compare urls
+def url_compare(new_url,url_list):
+    for i in url_list:
+        url_base = urlparse(i)
+        new_url_test = urlparse(new_url)
+
+        if ((url_base.netloc == new_url_test.netloc) and (url_base.path == new_url_test.path)):
+            print('here')
+            raise Exception('This Course is already present!!!!')
+        else:
+            print('Yes. This course can be added')
+    return new_url_test
+
