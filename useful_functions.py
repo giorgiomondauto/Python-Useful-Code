@@ -60,3 +60,14 @@ pd.set_option('display.max_columns', None)
 # convert list of string into a list for a column
 import ast
 info_data['Info'] = info_data['Info'].apply(lambda x: ast.literal_eval(x))
+
+# to check if a url exists:
+import requests
+def check_url(url):
+    request = requests.get(url)
+    if request.status_code == 200:
+        print('Web site exists')
+        url = url
+    else:
+        raise Exception('Web site does not exist')
+    return url
