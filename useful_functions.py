@@ -85,3 +85,5 @@ def url_compare(new_url,url_list):
             print('Yes. This course can be added')
     return new_url_test
 
+# to read a subset of the csv file
+pd.read_csv('data.csv').sample(num_to_load = 100, random_state = 1234)
