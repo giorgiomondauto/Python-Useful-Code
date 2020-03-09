@@ -87,3 +87,6 @@ def url_compare(new_url,url_list):
 
 # to read a subset of the csv file
 pd.read_csv('data.csv').sample(num_to_load = 100, random_state = 1234)
+
+# to split a column text with multiple delimiters
+data['column'].apply(lambda x: re.split('; |, |\*|\n|/',x))
