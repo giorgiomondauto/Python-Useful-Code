@@ -90,3 +90,7 @@ pd.read_csv('data.csv').sample(num_to_load = 100, random_state = 1234)
 
 # to split a column text with multiple delimiters
 data['column'].apply(lambda x: re.split('; |, |\*|\n|/',x))
+
+# if startswith multiple values - text in a column
+prefixes = ['di','dal','nan','del','sug','nan','dei']
+data['column'].apply(lambda x: [i for i in x if not i.startswith(tuple(prefixes))])
