@@ -94,3 +94,6 @@ data['column'].apply(lambda x: re.split('; |, |\*|\n|/',x))
 # if startswith multiple values - text in a column
 prefixes = ['di','dal','nan','del','sug','nan','dei']
 data['column'].apply(lambda x: [i for i in x if not i.startswith(tuple(prefixes))])
+
+# create dictionary from two columns
+pd.Series(source_hospital['ZIP Code'].values,index=source_hospital['Facility Name']).to_dict()
