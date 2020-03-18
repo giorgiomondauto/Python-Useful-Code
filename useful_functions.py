@@ -151,3 +151,8 @@ Distance = levenshtein_ratio_and_distance(Str1.lower(),Str2.lower())
 print(Distance)
 Ratio = levenshtein_ratio_and_distance(Str1.lower(),Str2.lower(),ratio_calc = True)
 print(Ratio)
+
+# permutations - combinations between two lists
+a = ["foo", "melon"]
+b = ['ciao', 'yes','si']
+c = list(itertools.product(a, b))
