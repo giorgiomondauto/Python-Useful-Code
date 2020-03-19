@@ -156,3 +156,14 @@ print(Ratio)
 a = ["foo", "melon"]
 b = ['ciao', 'yes','si']
 c = list(itertools.product(a, b))
+
+# to get all the divisors of a number
+def printDivisors(n) : 
+    i = 1
+    result = []
+    while i <= n : 
+        if (n % i==0) : 
+            result.append(i) 
+        i = i + 1
+    return result
+printDivisors(20)
