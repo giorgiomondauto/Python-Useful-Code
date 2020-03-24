@@ -173,4 +173,4 @@ new.rename(columns=lambda x: 'diag'+str(x), inplace = True)
 
 # to read and concatenate multiple files at once
 import glob
-pd.concat(map(pd.read_csv, glob.glob(os.path.join(INPATH, "parsedClaims*.csv"))))
+df = pd.concat(map(functools.partial(pd.read_csv, sep='|', index_col=0), glob.glob(os.path.join(INPATH, "parsed*") ) ))
