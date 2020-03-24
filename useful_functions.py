@@ -167,3 +167,6 @@ def printDivisors(n) :
         i = i + 1
     return result
 printDivisors(20)
+
+# rename columns in one go with a range of int
+new.rename(columns=lambda x: 'diag'+str(x), inplace = True)
