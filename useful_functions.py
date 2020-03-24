@@ -170,3 +170,7 @@ printDivisors(20)
 
 # rename columns in one go with a range of int
 new.rename(columns=lambda x: 'diag'+str(x), inplace = True)
+
+# to read and concatenate multiple files at once
+import glob
+pd.concat(map(pd.read_csv, glob.glob(os.path.join(INPATH, "parsedClaims*.csv"))))
