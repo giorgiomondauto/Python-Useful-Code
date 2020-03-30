@@ -178,3 +178,12 @@ df = pd.concat(map(functools.partial(pd.read_csv, sep='|', index_col=0), glob.gl
 
 # map columns from dictionary
 edi['PatZip5'].apply(lambda x: county_dict.get(x,'Unknown')).value_counts()
+
+
+# to map data from column without creating a dictionary
+ for col in ['Patient']:
+            adt = pd.merge(adt, ccodes, left_on = col+'ZipCode', 
+                           right_on = 'ZIP', 
+                           how = 'left')\
+                           .rename(columns={'COUNTYNAME':col+'County'})\
+                           .drop(['ZIP'], 1)
