@@ -17,4 +17,9 @@ def generate_random(start,end,divisible):
 
 
 print(generate_random(100,999,5))
-    
+
+# or easily
+random.randrange(100, 999, 5)     
+
+#############################
+
