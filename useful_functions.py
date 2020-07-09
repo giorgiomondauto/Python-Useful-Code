@@ -187,3 +187,9 @@ edi['PatZip5'].apply(lambda x: county_dict.get(x,'Unknown')).value_counts()
                            how = 'left')\
                            .rename(columns={'COUNTYNAME':col+'County'})\
                            .drop(['ZIP'], 1)
+                           
+# to check if all chars of a substring are in a string
+def f(s, Substring):
+     return all(s.count(i)>=Substring.count(i) for i in Substring)                            
+                           
+    
