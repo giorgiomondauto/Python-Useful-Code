@@ -37,7 +37,7 @@ print(generate_random(100,999,5))
     
 ##############################################
 # Input : ybghjhbuytb
-# Output : 166320
+# Output : 1663200
 # In second example, number of character is 11 and here h and y are repeated 2 times whereas g is repeated 3 times.
 # So, number of permutation is 11! / (2!2!3!) = 1663200
 
