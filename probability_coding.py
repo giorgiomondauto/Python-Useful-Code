@@ -21,5 +21,18 @@ print(generate_random(100,999,5))
 # or easily
 random.randrange(100, 999, 5)     
 
-#############################
+############ Easier Alternative #################
+def generate_random(start,end,divisible):
+    '''
+    '''
+    values = [i for i in range(start,end)]
+    values = [i for i in values if i%divisible==0]
+    random_choice = int(random.random() * len(values))
+    value_chosen = values[random_choice]
+    
+    return value_chosen
+
+
+print(generate_random(100,999,5))
+    
 
