@@ -35,4 +35,19 @@ def generate_random(start,end,divisible):
 
 print(generate_random(100,999,5))
     
+##############################################
+# Input : ybghjhbuytb
+# Output : 166320
+# In second example, number of character is 11 and here h and y are repeated 2 times whereas g is repeated 3 times.
+# So, number of permutation is 11! / (2!2!3!) = 1663200
 
+
+
+# Calculate the Factorial of a Number
+def factorial(n):
+    count = 1
+    for i in range(2,n+1):
+        count = count*i
+    return count
+
+print(factorial(4))
