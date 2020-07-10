@@ -36,12 +36,7 @@ def generate_random(start,end,divisible):
 print(generate_random(100,999,5))
     
 ##############################################
-# Input : ybghjhbuytb
-# Output : 1663200
-# In second example, number of character is 11 and here h and y are repeated 2 times whereas g is repeated 3 times.
-# So, number of permutation is 11! / (2!2!3!) = 1663200
-
-
+# How do you find the number of all distinct permutations of a string? (solution)
 
 # Calculate the Factorial of a Number
 def factorial(n):
@@ -49,5 +44,24 @@ def factorial(n):
     for i in range(2,n+1):
         count = count*i
     return count
-
 print(factorial(4))
+
+def numb_perm(str1):
+    '''
+    len(str1)!/duplicate(char)!
+    '''
+    # find char with multiple occurrences
+    values = {i:str1.count(i) for i in str1 if str1.count(i) >1}
+    denominator = 1
+    for i in values.values():
+        denominator = denominator * factorial(i)
+    print(denominator)
+    
+    result = int(factorial(len(str1))/denominator)
+    return result
+
+print(numb_perm('ybghjhbuytb'))
+# Input : ybghjhbuytb
+# Output : 1663200
+# In second example, number of character is 11 and here h and y are repeated 2 times whereas g is repeated 3 times.
+# So, number of permutation is 11! / (2!2!3!) = 1663200
