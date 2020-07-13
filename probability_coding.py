@@ -80,3 +80,37 @@ print(numb_perm('ybghjhbuytb'))
 # Output : 1663200
 # In second example, number of character is 11 and here h and y are repeated 2 times whereas g is repeated 3 times.
 # So, number of permutation is 11! / (2!2!3!) = 1663200
+
+
+
+
+# How do you find the missing number in a given integer array of 1 to 100?
+# Using gauss formula in here
+# How do you find the missing number in a given integer array of 1 to 100?
+
+def find_missing_int(values):
+    '''
+    easy way
+    '''
+    all_values = [ i for i in range(min(values),max(values))]
+    
+    for i in all_values:
+        if i not in values:
+            return i
+        
+values = [i for i in range(1,101) if i != 56]
+
+print(find_missing_int(values))
+
+
+def gauss_way(values):
+    '''
+    '''
+    expected_sum = ((len(values)+1) * (len(values)+2))/2
+
+    
+    return int(expected_sum  - sum(values))
+
+print(gauss_way(values))
+
+
