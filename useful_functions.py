@@ -192,4 +192,44 @@ edi['PatZip5'].apply(lambda x: county_dict.get(x,'Unknown')).value_counts()
 def f(s, Substring):
      return all(s.count(i)>=Substring.count(i) for i in Substring)                            
                            
+        
+# Largest subarray with consecutive integers (when integers are consecutives).
+
+def isconsecutive(values):
+    '''
+    '''
+    expected_sum = ((len(values))*(len(values)+1))/2
+    actual_sum = sum(values)
     
+    if expected_sum == actual_sum:
+        return True
+    else:
+        return False
+    
+import itertools
+
+
+def largest_sub(values):
+    '''
+    Largest subarray with consecutive integers (when integers are consecutives)
+    '''
+    subarrays = []
+    for i in range(len(values) + 1):
+        subarrays.append(list(itertools.combinations(values,i)))
+    
+    result = {i:len(i) for x in subarrays for i in x  if isconsecutive(list(i)) == True}
+    
+    return max(result.items(), key = lambda x: x[1])
+
+
+print(largest_sub([1, 9, 3, 10, 4, 20, 2]))
+
+# bubble_sort
+def bubble_sort(values):
+    for i in range(len(values)):
+        for j in range(0, len(values)-i-1):
+            if values[j] > values[j+1]:
+                values[j],values[j+1] = values[j+1], values[j]
+                
+    return values
+print(bubble_sort([64, 34, 25, 12, 22, 11, 90]))
