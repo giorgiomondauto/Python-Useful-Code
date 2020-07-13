@@ -46,6 +46,21 @@ def factorial(n):
     return count
 print(factorial(4))
 
+or 
+
+def factorial(n):
+    '''
+    '''
+    value = n
+    i = 1
+    while i < n:
+        value *= n-i
+        i+=1
+    return value
+print(factorial(5))
+
+##############################################
+
 def numb_perm(str1):
     '''
     len(str1)!/duplicate(char)!
