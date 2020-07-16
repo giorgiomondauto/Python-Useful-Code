@@ -233,3 +233,21 @@ def bubble_sort(values):
                 
     return values
 print(bubble_sort([64, 34, 25, 12, 22, 11, 90]))
+
+###### consecutive values
+def isconsecutive(values):
+    n = len(values)+ (min(values)-1)
+    sum_prior = sum([i for i in range(min(values))])
+    expected_sum = ((n*(n+1))/2)  - sum_prior
+    print('expected_sum',expected_sum)
+    actual_sum = sum(values)
+    print('actual_sum',actual_sum)
+    return expected_sum == actual_sum
+
+
+values1 = [1,2,3,4,5]
+
+value2 = [4,5,6]
+
+print(isconsecutive(value2))
+
