@@ -251,3 +251,10 @@ value2 = [4,5,6]
 
 print(isconsecutive(value2))
 
+############
+# How to find all occurrences of a substring?
+
+str1 = 'hello I am hulk'
+
+print([i for i in range(len(str1)) if str1.startswith('l',i)])
+
