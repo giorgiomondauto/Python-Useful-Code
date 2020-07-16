@@ -193,36 +193,7 @@ def f(s, Substring):
      return all(s.count(i)>=Substring.count(i) for i in Substring)                            
                            
         
-# Largest subarray with consecutive integers (when integers are consecutives).
 
-def isconsecutive(values):
-    '''
-    '''
-    expected_sum = ((len(values))*(len(values)+1))/2
-    actual_sum = sum(values)
-    
-    if expected_sum == actual_sum:
-        return True
-    else:
-        return False
-    
-import itertools
-
-
-def largest_sub(values):
-    '''
-    Largest subarray with consecutive integers (when integers are consecutives)
-    '''
-    subarrays = []
-    for i in range(len(values) + 1):
-        subarrays.append(list(itertools.combinations(values,i)))
-    
-    result = {i:len(i) for x in subarrays for i in x  if isconsecutive(list(i)) == True}
-    
-    return max(result.items(), key = lambda x: x[1])
-
-
-print(largest_sub([1, 9, 3, 10, 4, 20, 2]))
 
 # bubble_sort
 def bubble_sort(values):
@@ -257,4 +228,24 @@ print(isconsecutive(value2))
 str1 = 'hello I am hulk'
 
 print([i for i in range(len(str1)) if str1.startswith('l',i)])
+
+# Largest subarray with consecutive integers (when integers are consecutives).
+
+
+
+
+def largest_sub(values):
+    '''
+    Largest subarray with consecutive integers (when integers are consecutives)
+    '''
+    subarrays = []
+    for i in range(len(values) + 1):
+        subarrays.append(list(itertools.combinations(values,i)))
+    
+    result = {i:len(i) for x in subarrays for i in x  if isconsecutive(list(i)) == True}
+    
+    return max(result.items(), key = lambda x: x[1])
+
+
+print(largest_sub([1, 9, 3, 10, 4, 20, 2]))
 
