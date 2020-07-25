@@ -368,3 +368,15 @@ def is_palindrome(s):
             return is_palindrome(s[1:-1])
         else:
             return False
+
+        
+        
+##### all pairs ##### 
+values = [9,11,21,23]
+
+result = []
+for i in range(len(values)):
+    for j in range(i+1, len(values)):
+        result.append([values[i],values[j]])
+         
+print(result)
