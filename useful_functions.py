@@ -382,6 +382,20 @@ for i in range(len(values)):
 print(result)
 
 
+##### all triples #####
+L = [-1, 0, 1, 2, -1, -4]
+
+values = []
+for i in range(len(L)):
+    for j in range(i+1,len(L)):
+        for z in range(j+1,len(L)):
+            
+             values.append([L[i],L[j], L[z]])       
+print(values)
+######### or
+print([(L[i],L[j],L[z]) for i in range(len(L)) for j in range(i+1,len(L)) for z in range(j+1,len(L))])
+
+
 #### all the combinations of a set without combinations from itertools ####
 def my_function(arr):
     '''
