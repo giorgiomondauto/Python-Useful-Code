@@ -380,3 +380,17 @@ for i in range(len(values)):
         result.append([values[i],values[j]])
          
 print(result)
+
+
+#### all the combinations of a set without combinations from itertools ####
+def my_function(arr):
+    '''
+    '''
+    result = [[]]
+    for item in arr:
+        for subset in result:
+            result = result + [list(subset) + [item]]
+            
+    return result
+
+print(list(my_function([4, 5, 6])))
