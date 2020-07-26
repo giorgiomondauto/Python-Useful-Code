@@ -408,3 +408,16 @@ def my_function(arr):
     return result
 
 print(list(my_function([4, 5, 6])))
+
+
+#### remove values from a list
+nums = [3,2,2,3]
+
+print(list(filter(lambda x: x != 3, nums))) # remove all occurrences
+# first occurence
+nums.remove(3)
+print(nums)
+# remove by index
+nums.pop(3) # index 3
+print(nums)
+
