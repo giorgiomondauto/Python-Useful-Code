@@ -382,6 +382,17 @@ for i in range(len(values)):
 print(result)
 
 
+#### all permutations of a list of words
+words = ["foo","bar"]
+results = []
+for i in range(len(words)):
+    for j in range(len(words)):
+        if i!=j:
+            results.append([''.join([words[i],words[j]])])
+        
+print(results)
+
+
 ##### all triples #####
 L = [-1, 0, 1, 2, -1, -4]
 
