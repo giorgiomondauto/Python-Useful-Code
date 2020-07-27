@@ -192,8 +192,6 @@ edi['PatZip5'].apply(lambda x: county_dict.get(x,'Unknown')).value_counts()
 def f(s, Substring):
      return all(s.count(i)>=Substring.count(i) for i in Substring)                            
                            
-        
-
 
 # bubble_sort
 def bubble_sort(values):
@@ -215,11 +213,8 @@ def isconsecutive(values):
     print('actual_sum',actual_sum)
     return expected_sum == actual_sum
 
-
 values1 = [1,2,3,4,5]
-
 value2 = [4,5,6]
-
 print(isconsecutive(value2))
 
 ############
@@ -230,9 +225,6 @@ str1 = 'hello I am hulk'
 print([i for i in range(len(str1)) if str1.startswith('l',i)])
 
 # Largest subarray with consecutive integers (when integers are consecutives).
-
-
-
 
 def largest_sub(values):
     '''
@@ -246,11 +238,8 @@ def largest_sub(values):
     
     return max(result.items(), key = lambda x: x[1])
 
-
-
 # Subarray - Subsequence - Subset
 # Consider an array:
-
 #  {1,2,3,4}
 # Subarray: contiguous sequence in an array i.e.
 
@@ -268,8 +257,6 @@ def largest_sub(values):
 # Subset = 2^n
 
 # print(largest_sub([1, 9, 3, 10, 4, 20, 2]))
-
-
 
 ####### LINKED LIST ########
 
