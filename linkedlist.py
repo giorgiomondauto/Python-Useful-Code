@@ -1,10 +1,8 @@
 ####### LINKED LIST ########
-
 class linkedListNode:
     def __init__(self, value, nextNode=None):
         self.value = value
         self.nextNode = nextNode
-
 
 def insertNode(head, valuetoInsert):
     currentNode = head
@@ -29,7 +27,6 @@ def deleteNode(head, valueToDelete):
         previousNode = currentNode
         currentNode = currentNode.nextNode
     return head  # Value to delete was not found.
-
 
 # "3" -> "7" -> "10"
 
@@ -71,7 +68,6 @@ print ("*********************************")
 print ("Inserting the node '99'")
 newHead = insertNode(newHead, "99")
 
-
 print ("*********************************")
 print ("traversing the new linkedList with the node 99 added")
 print ("*********************************")
@@ -81,7 +77,7 @@ while currentNode is not None:
     print (currentNode.value),
     currentNode = currentNode.nextNode
     
- ####### print middle value of a linked list ########
+ ####### FIND MIDDLE OF A LINKED LIST ########
 class Node: 
     def __init__(self, value): 
         self.data = value 
@@ -113,7 +109,6 @@ class LinkedList:
             count += 1 
           
         print(temp.data)  
-        
         
 list1 = LinkedList() 
 list1.push(5) 
