@@ -337,3 +337,21 @@ print(nums)
 nums.pop(3) # index 3
 print(nums)
 
+##### Merge Sorted Array (Python) #####
+# Input:
+# nums1 = [1,2,3,0,0,0], m = 3
+# nums2 = [2,5,6],       n = 3
+
+# Output: [1,2,2,3,5,6]
+
+nums1 = [1,2,3,0,0,0]
+nums2 = [2,5,6]
+
+def merge(nums1,nums2, m, n):
+    
+    del nums1[m:]
+    nums1 += nums2[0:n]
+    nums1.sort()
+    return nums1
+
+print(merge(nums1,nums2,3,3))
