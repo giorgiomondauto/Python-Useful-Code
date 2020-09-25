@@ -224,6 +224,10 @@ str1 = 'hello I am hulk'
 
 print([i for i in range(len(str1)) if str1.startswith('l',i)])
 
+
+# how to find all occurrences of an item in a list
+ print([i for i, x in enumerate(indeces) if x == "26489"])
+
 # Largest subarray with consecutive integers (when integers are consecutives).
 
 def largest_sub(values):
