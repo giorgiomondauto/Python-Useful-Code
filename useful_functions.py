@@ -329,6 +329,26 @@ def my_function(arr):
 
 print(list(my_function([4, 5, 6])))
 
+#### find all the subarrays of an array
+def sub_lists(list1): 
+  
+    # store all the sublists  
+    sublist = [[]] 
+      
+    # first loop  
+    for i in range(len(list1) + 1): 
+          
+        # second loop  
+        for j in range(i + 1, len(list1) + 1): 
+              
+            # slice the subarray  
+            sub = list1[i:j] 
+            sublist.append(sub) 
+            
+    return sublist
+              
+print(sub_lists(values))
+
 
 #### remove values from a list
 nums = [3,2,2,3]
