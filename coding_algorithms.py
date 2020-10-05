@@ -137,9 +137,10 @@ print(values)
 print([(L[i],L[j],L[z]) for i in range(len(L)) for j in range(i+1,len(L)) for z in range(j+1,len(L))])
 
 
-#### all the combinations of a set without combinations from itertools ####
+#### all the subsets of a set without combinations from itertools ####
 def my_function(arr):
     '''
+    2^n where n is the number of values/len(array)
     '''
     result = [[]]
     for item in arr:
