@@ -145,7 +145,7 @@ def my_function(arr):
     result = [[]]
     for item in arr:
         for subset in result:
-            result = result + [list(subset) + [item]]
+            result = result + [subset + [item]]
             
     return result
 
