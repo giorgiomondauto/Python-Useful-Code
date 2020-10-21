@@ -33,3 +33,34 @@ class BST:
         self.left = None
         self.right = None
 
+# Fibonacci
+# function 2
+def getNthFib(n):
+    # Write your code here.
+    n0 = 0
+    n1 = 1
+    fibonacci = [n0,n1]
+    if n == 0:
+        return fibonacci[0]
+    elif n == 1:
+        return  fibonacci[1]
+    else:
+        i = 2
+        while i<=n-1:
+            nth = n1+n0
+            n0 = n1
+            n1 = nth
+            fibonacci.append(nth)
+            i+=1
+
+    return fibonacci[-1]
+
+# or algoexpert solution
+def getNthFib(n):
+    # Write your code here.
+    if n == 1:
+		return 0
+	elif n ==2:
+		return 1
+	else:
+		return getNthFib(n-1)+getNthFib(n-2)
