@@ -64,3 +64,40 @@ def getNthFib(n):
 		return 1
 	else:
 		return getNthFib(n-1)+getNthFib(n-2)
+
+	
+# function 3
+#take an array and return its product sum
+# input: values = [1,[2,[3]]]
+# output: 23
+def productSum(array, multiplier = 1):
+	sum = 0
+	for element in array:
+		if type(element) is list:
+			sum+= productSum(element, multiplier+1)
+		else:
+			sum +=element
+	return sum*multiplier
+
+
+# function 4
+#INSERTION SORT Method
+# best: O(n) time | O(1) space
+# average: O(n^2) time | O(1) space 
+# worst: O(n^2) time | O(1) space
+def insertionSort(array):
+    # Write your code here.
+    for j in range(1,len(array)):
+        while j>0 and array[j-1]>array[j]:
+            array = swap(j-1,j,array)
+            j-=1
+            
+    return array
+
+def swap(i,j,array):
+    array[i],array[j] = array[j],array[i]
+    return array
+
+values = [1,5,8,33,4]
+print(insertionSort(values))
+    
