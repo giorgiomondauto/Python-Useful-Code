@@ -150,4 +150,16 @@ def swap(i,j,array):
     
 print(selectionSort([1,5,4,77,5555]))
 	
+# Function 7
+# ThreeNumberSum problem
+def threeNumberSum(array, targetSum):
+    triples = [[array[i],array[j],array[z]] 
+			  for i in range(len(array))
+			  for j in range(i+1,len(array)) 
+			  for z in range(j+1, len(array)) 
+			  if array[i]+array[j]+array[z] == targetSum]
+	for i in triples:
+		i.sort()
+	triples.sort()
     
+	return triples
