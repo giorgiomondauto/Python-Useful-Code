@@ -163,3 +163,28 @@ def threeNumberSum(array, targetSum):
 	triples.sort()
     
 	return triples
+
+# Function 8 
+# LongestCommonsSubsequence
+def longestCommonSubsequence(str1, str2):
+    substr1 = subsequences(str1)
+    substr2 = subsequences(str2)
+    result = {tuple(i):len(i) for i in substr1 if i in substr2}
+    result = max(result.items(), key = lambda x: x[1])
+    result = list(result[0])
+    
+    return result
+
+def subsequences(str1):
+    subsequence = [[]]
+    for item in str1:
+        for sub in subsequence:
+            subsequence = subsequence +[sub + [item]]
+            
+    return subsequence
+
+str1= "ZXVVYZW"
+str2= "XKYKZPW"
+
+print(longestCommonSubsequence(str1,str2))
+
