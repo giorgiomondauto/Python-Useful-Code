@@ -104,6 +104,7 @@ print(insertionSort(values))
 # Function 5
 # BranchSums
 # This is the class of the input root. Do not edit it.
+# This is the class of the input root. Do not edit it.
 class BinaryTree:
     def __init__(self, value):
         self.value = value
@@ -112,18 +113,22 @@ class BinaryTree:
 		
 def branchSums(root):
 	sums = []
-	calculateBranchSums(root,0,sums)
+	calculateBranchSums(root, 0 , sums)
 	return sums
+	
 
-def calculateBranchSums(node,runningSum,sums):
+def calculateBranchSums(node,runningsum,sums):
+	
 	if node is None:
-		return 
+		return sums
 	
-	newRunningSum = runningSum + node.value
+	newrunningsums = runningsum + node.value
 	if node.left is None and node.right is None:
-		sums.append(newRunningSum)
-		return
+		sums.append(newrunningsums)
+		return sums
 	
-	calculateBranchSums(node.left, newRunningSum,sums)
-	calculateBranchSums(node.right,newRunningSum,sums)
+	calculateBranchSums(node.left,newrunningsums,sums)
+	calculateBranchSums(node.right,newrunningsums,sums)
+
+	
     
