@@ -237,24 +237,34 @@ def isMonotonic(array):
 # I can do with itertools but also with below code
 
 elements = [1,2,3]
-def permutation(lst): 
-    
-    if len(lst) == 0: 
-        return [] 
-    
-    if len(lst) == 1: 
-        return [lst] 
-    
-    l = [] # empty list that will store current permutation 
-    
-    for i in range(len(lst)): 
-        
-        m = lst[i] 
-        remLst = lst[:i] + lst[i+1:] 
-    
-    
-        for p in permutation(remLst): 
-            l.append([m] + p) 
-    return l
+def permutations(lst):
 
-print(permutation(elements))
+    if len(lst)==0:
+        return lst
+    elif len(lst)==1:
+        return [lst]
+
+    else:
+        result = []
+        for i in range(len(lst)):
+            m = lst[i]
+            rm_list = lst[:i] + lst[i+1:]
+
+            for p in permutations(rm_list):
+                result.append([m]+p)
+
+    return result
+print(permutations(elements))
+
+# Function 13
+# Longest Palindrom Substrings
+def ispalindrome(string):
+    return string==string[::-1]
+
+def longestPalindromicSubstring(string):
+
+    substringa = {string[i:j]:len(string[i:j]) for i in range(len(string))
+              for j in range(i+1,len(string)+1) if ispalindrome(string[i:j])}
+
+
+    return max(substringa.items(), key = lambda x: x[1])[0]
