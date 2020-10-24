@@ -103,8 +103,7 @@ print(insertionSort(values))
 
 # Function 5
 # BranchSums
-# This is the class of the input root. Do not edit it.
-# This is the class of the input root. Do not edit it.
+
 class BinaryTree:
     def __init__(self, value):
         self.value = value
@@ -187,4 +186,49 @@ str1= "ZXVVYZW"
 str2= "XKYKZPW"
 
 print(longestCommonSubsequence(str1,str2))
+
+# Function 9
+# SmallestDifference between pairs considering two different lists
+def smallestDifference(arrayOne, arrayTwo):
+    
+    pairs = {(arrayOne[i],arrayTwo[j]):abs(arrayOne[i] - arrayTwo[j])
+             for i in range(len(arrayOne)) for j in range(len(arrayTwo))}
+    
+    result = min(pairs.items(), key = lambda x:x[1])
+    return list(result[0])
+	
+# Function 10
+# Move an element to the end of the list
+def moveElementToEnd(array, toMove):
+    # Write your code here.
+    num_times = 0 # array.count(toMove)
+    for i in array:
+        if i ==toMove:
+            num_times+=1
+    
+    array = list(filter(lambda x: x!=toMove, array)) + [toMove]*num_times
+    return array
+
+def moveElementToEnd(array, toMove):
+    # Write your code here.
+    num_times = array.count(toMove)
+    
+    array = list(filter(lambda x: x!=toMove, array)) + [toMove]*num_times
+    return array
+
+array = [1,4,5,7,2,2,2,4,4,4]
+toMove =4
+print(moveElementToEnd(array, toMove))
+
+#Function11
+# Monotonic = if its elements are  entirely non-decreasing
+# or non-increasing
+def isMonotonic(array):
+    # Write your code here.
+    t = array.copy()
+    t.sort()
+    if array == t or array == t[::-1]:
+	return True
+    else:
+	return False
 
