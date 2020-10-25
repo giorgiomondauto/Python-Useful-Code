@@ -66,3 +66,14 @@ current_node = head
 while current_node is not None:
     print(current_node.value)
     current_node = current_node.next_node
+    
+    
+def reverseLinkedList(head):
+    previousNode, currentNode = None, head #None,1
+	while currentNode is not None:
+		nextNode = currentNode.next  #2 - 3 - 4 -5
+		currentNode.next = previousNode #1 - 2 - 3 -4
+		previousNode = currentNode #1 - 2 -3 -4
+		currentNode = nextNode #2 - 3 -4 -5
+	return previousNode
+
