@@ -268,3 +268,16 @@ def longestPalindromicSubstring(string):
 
 
     return max(substringa.items(), key = lambda x: x[1])[0]
+
+
+# Function 14
+# fourNumberSum
+def fourNumberSum(array, targetSum):
+    quadruplets = [[array[i],array[j],array[z],array[m]] 
+				   for i in range(len(array))
+				   for j in range(i+1,len(array))
+				   for z in range(j+1,len(array))
+				   for m in range(z+1, len(array))
+				   if array[i] + array[j] +array[z] +array[m] ==targetSum]
+	
+	return quadruplets
