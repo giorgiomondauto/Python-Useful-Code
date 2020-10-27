@@ -314,3 +314,51 @@ def maxSubsetSumNoAdjacent(array):
         # print(maxSums)
         # print(10*'-')
     return maxSums[-1]
+
+
+# balancedBrackets
+# function 17
+def find_occurrences(char,str1):
+    '''
+    '''
+    occ = len([i for i in range(len(str1)) if str1.startswith(char,i)])
+    return occ
+
+
+def balancedBrackets(str1):
+    '''
+    '''
+    round_left = '('
+    round_right = ')'
+    bracket_left = '['
+    bracket_right = ']'
+    brace_left = '{'
+    brace_right = '}'
+    
+    if find_occurrences(round_left,str1) == find_occurrences(round_right,str1):
+        if find_occurrences(bracket_left,str1) == find_occurrences(bracket_right,str1):
+            if find_occurrences(brace_left,str1) == find_occurrences(brace_right,str1):
+                return True
+            else:
+                return False
+        else:
+            return False
+    else:
+        return False
+#### correct one considering the order as well:
+def balancedBrackets(string):
+    openingBrackets = '([{'
+	closingBrackets = ")]}"
+	matchingBrackets = {")":"(","]":"[","}":"{"}
+	stack = []
+	for char in string:
+		if char in openingBrackets:
+			stack.append(char)
+		elif char in closingBrackets:
+		     if len(stack)==0:
+			return False
+		     if stack[-1]==matchingBrackets[char]:
+			stack.pop()
+		     else:
+			return False
+	return len(stack)==0
